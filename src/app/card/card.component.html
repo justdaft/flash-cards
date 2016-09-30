@@ -1,11 +1,17 @@
-<md-card>
-   <md-card-subtitle>Alphabet</md-card-subtitle>
-   <md-card-title>Learn your letters</md-card-title>   
-   <md-card-content>
-        <p class="big">A</p>
-   </md-card-content>
-   <md-card-actions>
-        <button md-button>Correct</button>
-        <button md-button>Wrong</button>
-   </md-card-actions>
-</md-card>
+<div>
+    <md-card class="app-content md-card">
+        <md-card-subtitle>Alphabet</md-card-subtitle>
+        <md-card-title>Learn your letters</md-card-title>
+        <md-card-content [@visibilityChanged]="isVisible">
+            <p class="big">{{currentLetter}}</p>
+        </md-card-content>
+        <md-card-actions>
+            <md-toolbar [color]="myColor">
+                <button md-button><i class="fa fa-arrow-left"></i> Previous</button>
+                <span> </span>
+
+                <button md-button (click)=pickCard()>Next <i class="fa fa-arrow-right"></i></button>
+            </md-toolbar>
+        </md-card-actions>
+    </md-card>
+</div>

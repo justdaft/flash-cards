@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  fixedRowHeight = 100;
+  fixedCols = 3;
 }
