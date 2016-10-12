@@ -1,13 +1,13 @@
 <div>
     <md-card class="app-content md-card">
         <md-card-subtitle>Alphabet</md-card-subtitle>
-        <md-card-title>Learn your letters</md-card-title>
-        <md-card-content [@visibilityChanged]="isVisible">
-            <p class="big">{{currentLetter}}</p>
+        <md-card-title>Learn your letters, turns:{{turns}}</md-card-title>
+        <md-card-content [@visibilityChanged]="isVisible" (@visibilityChanged.done)="animationDone($event)">
+            <p class="big" >{{currentLetter}}</p>
         </md-card-content>
         <md-card-actions>
             <md-toolbar [color]="myColor">
-                <button md-button><i class="fa fa-arrow-left"></i> Previous</button>
+                <button md-button (click)=goBack()><i class="fa fa-arrow-left"></i> Previous</button>
                 <span> </span>
 
                 <button md-button (click)=pickCard()>Next <i class="fa fa-arrow-right"></i></button>
